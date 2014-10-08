@@ -10,16 +10,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class BlogPostParser {
     private static BlogPostParser parser;
+    public ArrayList<BlogPost> posts;
+
     private BlogPostParser() {
 
     }
 
     public static BlogPostParser get() {
         if(parser == null){
-
+            parser = new BlogPostParser();
         }
         return parser;
     }
@@ -45,5 +48,9 @@ public class BlogPostParser {
         }
 
         return jsonObject;
+    }
+
+    public void readFeed(JSONObject jsonObject) {
+
     }
 }
