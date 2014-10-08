@@ -15,6 +15,7 @@ import java.net.URL;
 public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
     @Override
     protected JSONObject doInBackground(Activity... activities) {
+        JSONObject jsonObject = null;
         try {
             URL blogFeedUrl = new URL("http://blogs.teamtreehouse.com/api/get_recent_summary/?count");
 
@@ -33,6 +34,11 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
         catch (IOException error) {
             Log.e("BlogPostTask", "IO Exception: " + error);
         }
-        return null;
+        return jsonObject;
+    }
+
+    @Override
+    protected void onPostExecute(JSONObject jsonObject) {
+        super.onPostExecute(jsonObject);
     }
 }
