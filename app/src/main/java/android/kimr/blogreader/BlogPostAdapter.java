@@ -1,6 +1,7 @@
 package android.kimr.blogreader;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,7 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        
+        BlogPost post = getItem(position);
+
     }
 }
