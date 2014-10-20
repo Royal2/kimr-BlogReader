@@ -22,7 +22,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
         activity = activities[0];
         JSONObject jsonObject = null;
         try {
-            URL blogFeedUrl = new URL("http://blogs.teamtreehouse.com/api/get_recent_summary/?count");
+            URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=10");
 
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
@@ -30,7 +30,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
 
             if(responseCode == HttpURLConnection.HTTP_OK) {
                 Log.i("BlogPostTask", "Successful Connection " + responseCode);
-                BlogPostParser.get().parse(connection.getInputStream());
+                jsonObject = BlogPostParser.get().parse(connection.getInputStream());
             }
         }
         catch(MalformedURLException error){

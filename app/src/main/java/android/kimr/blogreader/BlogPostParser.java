@@ -18,6 +18,7 @@ public class BlogPostParser {
     public ArrayList<BlogPost> posts;
 
     private BlogPostParser() {
+
         posts = new ArrayList<BlogPost>();
     }
 
