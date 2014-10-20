@@ -17,5 +17,8 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
     public View getView(int position, View convertView, ViewGroup parent) {
         BlogPost post = getItem(position);
 
+        if(convertView == null){
+            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
+        }
     }
 }
