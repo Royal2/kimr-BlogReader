@@ -1,5 +1,6 @@
 package android.kimr.blogreader;
 
+import android.text.Html;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -59,7 +60,8 @@ public class BlogPostParser {
             for(int index = 0; index < jsonPosts.length(); index++) {
                 JSONObject post = jsonPosts.getJSONObject(index);
 
-                String title = post.getString("title");
+                //Using Html package to read Html code.
+                String title = Html.fromHtml(post.getString("title")).toString();
                 String url = post.getString("url");
 
                 BlogPost blogPost = new BlogPost(title, url);
