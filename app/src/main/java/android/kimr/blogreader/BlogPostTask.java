@@ -22,7 +22,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
         activity = activities[0];
         JSONObject jsonObject = null;
         try {
-            URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=10");
+            URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=20");
 
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
