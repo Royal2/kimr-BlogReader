@@ -1,6 +1,8 @@
 package android.kimr.blogreader;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,6 +35,12 @@ public class BlogActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("BlogActivity", "title" + BlogPostParser.get().posts.get(position).title);
+
+                Intent intent = new Intent(getApplicationContext(), BlogWebActivity.class);
+                Uri blogUri = Uri.parse(BlogPostParser.get().posts.get(position).url);
+                intent.setData(blogUri);
+                
+                startActivity(intent);
             }
         });
 
