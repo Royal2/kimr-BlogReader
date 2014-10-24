@@ -39,7 +39,7 @@ public class BlogActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), BlogWebActivity.class);
                 Uri blogUri = Uri.parse(BlogPostParser.get().posts.get(position).url);
                 intent.setData(blogUri);
-                
+
                 startActivity(intent);
             }
         });
