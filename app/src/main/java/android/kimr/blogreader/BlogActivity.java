@@ -31,6 +31,7 @@ public class BlogActivity extends Activity {
         listView.setEmptyView(progressBar);
 
         //Creating Anonymous Class into listView
+        //Runs activity when item is clicked.
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

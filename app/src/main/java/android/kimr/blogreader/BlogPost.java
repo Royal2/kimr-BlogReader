@@ -9,6 +9,7 @@ public class BlogPost {
         this.url = url;
     }
 
+    //Converts to string.
     @Override
     public String toString() {
         return title;

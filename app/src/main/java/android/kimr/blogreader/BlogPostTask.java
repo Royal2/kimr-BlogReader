@@ -24,6 +24,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
         try {
             URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=20");
 
+            //Connects and gets the activities.
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
             int responseCode = connection.getResponseCode();
