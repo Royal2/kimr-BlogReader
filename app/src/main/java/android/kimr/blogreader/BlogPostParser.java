@@ -62,9 +62,12 @@ public class BlogPostParser {
 
                 //Using Html package to read Html code.
                 String title = Html.fromHtml(post.getString("title")).toString();
+                String date = post.getString("date");
+                String author = post.getString("author");
+                String thumbnail = post.getString("thumbnail");
                 String url = post.getString("url");
 
-                BlogPost blogPost = new BlogPost(title, url);
+                BlogPost blogPost = new BlogPost(title, date, author, thumbnail, url);
                 posts.add(blogPost);
             }
         }
