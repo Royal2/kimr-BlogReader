@@ -7,19 +7,26 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#0066CC"
+        android:textSize="33px"
         />
     <TextView
         android:id="@+id/date"
-        android:layout_width="0dp"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/author" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="@+id/author"
+        android:textColor="#6666FF"
+        android:textSize="25px"
+        />
     <TextView
         android:id="@id/author"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_alignParentRight="true" />
+        android:layout_below="@id/date"
+        android:layout_alignParentRight="true"
+        android:textColor="#000099"
+        android:textSize="30px"
+        />
 
 </RelativeLayout>
