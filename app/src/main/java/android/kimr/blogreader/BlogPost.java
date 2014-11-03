@@ -7,6 +7,7 @@ public class BlogPost {
     public final String thumbnail;
     public final String url;
 
+    //list items: title, date, author.
     public BlogPost(String title, String date, String author, String thumbnail, String url ){
         this.title = title;
         this.date = date;

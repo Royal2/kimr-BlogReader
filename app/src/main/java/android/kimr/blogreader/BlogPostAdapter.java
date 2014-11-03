@@ -22,6 +22,7 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_items_blog, parent, false);
         }
 
+        //displaying list items.
         TextView textView = (TextView) convertView.findViewById(R.id.title);
         textView.setText (post.title);
 

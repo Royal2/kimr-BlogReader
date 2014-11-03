@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 public class BlogWebActivity extends Activity {
     protected ProgressBar progressBar;
     protected WebView webView;
+    //Web Activity progress bar --> disappear when loading is complete.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class BlogWebActivity extends Activity {
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {
-                //make progress bar disappear.
+                //making progress bar disappear.
                 progressBar.setVisibility(View.GONE);
             }
         });
