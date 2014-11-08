@@ -8,6 +8,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:textColor="#0066CC"
         android:textSize="33px"
         />
@@ -32,13 +33,14 @@
         />
     <WebView
         android:id="@+id/thumbnail"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/title"
         android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
+        android:verticalSpacing="20dp"
         android:horizontalSpacing="10dp"
-        android:columnWidth="90dp"
-        android:stretchMode="columnWidth"
+        android:columnWidth="50dp"
         android:gravity="center"
         />
 
