@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,7 +24,10 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_items_blog, parent, false);
         }
 
+
+
         //displaying list items.
+
         TextView textView = (TextView) convertView.findViewById(R.id.title);
         textView.setText (post.title);
 
@@ -31,6 +36,15 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
 
         TextView date = (TextView) convertView.findViewById(R.id.date);
         date.setText (post.date);
+
+        WebView thumbnail = (WebView) convertView.findViewById(R.id.thumbnail);
+        //ImageView thumbnail = (ImageView) convertView.findViewById(R.id.thumbnail);
+
+        //thumbnail.setText (post.thumbnail);
+        thumbnail.loadUrl(post.thumbnail);
+
+        //TextView thumbnail = (TextView) convertView.findViewById(R.id.thumbnail);
+        //date.setText (post.thumbnail);
 
         return convertView;
     }

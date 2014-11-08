@@ -1,6 +1,8 @@
 package android.kimr.blogreader;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -8,10 +10,13 @@ import android.widget.GridView;
 
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 //BlogPostTask inherits all the properties of AsyncTask.
 public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
@@ -21,6 +26,9 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
     protected JSONObject doInBackground(Activity... activities) {
         activity = activities[0];
         JSONObject jsonObject = null;
+
+        //Bitmap bm = null;
+
         try {
             URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=20");
 
@@ -33,6 +41,16 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
                 Log.i("BlogPostTask", "Successful Connection " + responseCode);
                 jsonObject = BlogPostParser.get().parse(connection.getInputStream());
             }
+
+            //URL aURL = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=20");
+            //URLConnection conn = aURL.openConnection();
+            //conn.connect();
+            //InputStream is = conn.getInputStream();
+            //BufferedInputStream bis = new BufferedInputStream(is);
+            //bm = BitmapFactory.decodeStream(bis);
+            //bis.close();
+            //is.close();
+
         }
         catch(MalformedURLException error){
             Log.e("BlogPostTask", "Malformed URL: " + error);
